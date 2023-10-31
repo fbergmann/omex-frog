@@ -23,8 +23,17 @@ pip install -e .
 or directly from github: 
 
 ```bash
-pip install https://github.com/fbergmann/omex-frog.git
+pip install git+https://github.com/fbergmann/omex-frog.git
 ```
+
+### API
+
+```python
+>>> import omex_frog
+>>> omex_frog.guess_format_uri('manifest.json')
+'http://identifiers.org/combine.specifications:frog-json-version-1'
+```
+
 
 ## Using
 
@@ -108,13 +117,4 @@ frog.json http://identifiers.org/combine.specifications:frog-json-version-1
 03_gene_deletion 2.tsv http://identifiers.org/combine.specifications:frog-genedeletion-version-1
 04_reaction_deletion.tsv http://identifiers.org/combine.specifications:frog-reactiondeletion-version-1
 01_objective.tsv http://identifiers.org/combine.specifications:frog-objective-version-1
-```
-
-
-### API
-
-```python
->>> import omex_frog
->>> omex_frog.guess_format_uri('manifest.json')
-'http://identifiers.org/combine.specifications:frog-json-version-1'
 ```
