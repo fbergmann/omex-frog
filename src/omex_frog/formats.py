@@ -28,7 +28,18 @@ ZIP = PURL_PREFIX + "application/zip"
 
 
 def guess_format_uri(filename):
-    """Guess the format of the input file based on the file"""
+    """Guess the format of the input file based on the file
+    
+    The detection uses some heuristics to guess the format of the file.
+
+    for example: 
+    
+    >>> import omex_frog
+    >>> omex_frog.guess_format_uri('manifest.json')
+    'http://identifiers.org/combine.specifications:omex-manifest'
+    
+
+    """
     basename = os.path.basename(filename)
     extension = filename.split(".")[-1]
 
